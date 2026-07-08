@@ -1,0 +1,20 @@
+# OS
+.DS_Store
+Thumbs.db
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Dependencies (ha Node.js-t használnánk később)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Sensitive data
+.env
+.env.local

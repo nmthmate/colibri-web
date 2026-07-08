@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colibri Italdiszkont | Dunavarsány</title>
+    <meta
+      name="description"
+      content="Colibri Italdiszkont Dunavarsányban - italok, akciók és gyors kiszolgálás."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body id="top">
+    <div class="age-gate" id="ageGate" role="dialog" aria-modal="true" aria-labelledby="ageGateTitle">
+      <div class="age-gate-card">
+        <p class="age-badge">18+</p>
+        <h2 id="ageGateTitle">Alkoholtartalmú italokra vonatkozó figyelmeztetés</h2>
+        <p>
+          A weboldal alkoholtartalmú italokat is bemutat. Tizennyolc év alatti személy részére
+          alkoholtartalmú ital nem értékesíthető.
+        </p>
+        <div class="age-actions">
+          <button id="ageConfirmBtn" class="btn btn-solid" type="button">Elmúltam 18</button>
+          <button id="ageRejectBtn" class="btn btn-muted" type="button">Nem múltam el 18</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="topbar">
+      <p>18 éven aluliak részére alkoholtartalmú ital nem értékesíthető</p>
+    </div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#top">
+          <img src="logo.jpeg" alt="Colibri Italdiszkont logó" />
+          <span>
+            <strong>Colibri Italdiszkont</strong>
+            <small>Dunavarsány</small>
+          </span>
+        </a>
+
+        <nav class="site-nav">
+          <a href="#top">Főoldal</a>
+          <a href="#kinalat">Kínálat</a>
+          <a href="#akciok">Akciók</a>
+          <a href="#kapcsolat">Kapcsolat</a>
+        </nav>
+
+        <a class="btn btn-solid desktop-only" href="#kinalat">Megnézem a kínálatot</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="hero" aria-label="Kiemelt ajánlatok">
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="container hero-content">
+          <p class="hero-kicker">Colibri Italdiszkont</p>
+          <h1 id="heroTitle">Prémium italok, diszkont árakon</h1>
+          <p id="heroSubtitle">
+            Röviditalok, borok, sörök és üdítők széles választéka egy helyen.
+          </p>
+          <p class="service-highlight">MOHU automata pont</p>
+          <a class="btn btn-solid" id="heroCatalogBtn" href="#kinalat">Kínálat megnyitása</a>
+        </div>
+        <button class="hero-nav prev" id="heroPrev" type="button" aria-label="Előző slide">
+          ‹
+        </button>
+        <button class="hero-nav next" id="heroNext" type="button" aria-label="Következő slide">
+          ›
+        </button>
+      </section>
+
+      <section id="kinalat" class="products reveal">
+        <div class="container">
+          <div class="section-head">
+            <h2>Termékek</h2>
+            <p>Keresd meg gyorsan, amit ma vinnél.</p>
+          </div>
+
+          <div class="search-box">
+            <input
+              id="productSearch"
+              type="text"
+              placeholder="Keresés név vagy kategória alapján..."
+              autocomplete="off"
+            />
+            <div class="filter-toolbar">
+              <label class="filter-control">
+                Ár
+                <select id="priceFilter">
+                  <option value="all">Minden ár</option>
+                  <option value="0-999">0-999 Ft</option>
+                  <option value="1000-2999">1 000-2 999 Ft</option>
+                  <option value="3000-4999">3 000-4 999 Ft</option>
+                  <option value="5000+">5 000 Ft felett</option>
+                </select>
+              </label>
+
+              <label class="filter-check">
+                <input id="depositOnly" type="checkbox" />
+                Csak DRS termékek
+              </label>
+
+              <button id="clearFiltersBtn" class="btn btn-muted filter-reset" type="button">
+                Szűrők törlése
+              </button>
+            </div>
+
+            <div id="categoryFilters" class="category-filters" aria-label="Termék kategória szűrők">
+              <button class="filter-chip active" type="button" data-category="all">Összes</button>
+            </div>
+            <p id="productCount">0 termék</p>
+            <p class="product-disclaimer">
+              Az oldalon szereplő árak tájékoztató jellegű, bruttó fogyasztói árak (Ft). A készlet
+              és árak változhatnak.
+            </p>
+          </div>
+
+          <div id="productGrid" class="products-grid" aria-live="polite">
+            <p class="data-status">Termékek betöltése...</p>
+          </div>
+
+          <div class="product-actions">
+            <button id="loadMoreProductsBtn" class="btn btn-muted" type="button" hidden>
+              További termékek betöltése
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="akciok" class="deals reveal">
+        <div class="container">
+          <div class="section-head section-head-light">
+            <h2>Aktuális akciók</h2>
+            <p>Heti ajánlatok a legnépszerűbb kategóriákból.</p>
+          </div>
+
+          <div id="dealStrip" class="deals-grid" aria-live="polite">
+            <p class="data-status">Akciók betöltése...</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="map-cta reveal" aria-label="Üzlet helye a térképen">
+        <img class="map-image" src="map.png" alt="Colibri Italdiszkont helye a térképen" />
+
+        <div class="map-overlay">
+          <a
+            class="btn btn-solid"
+            href="https://www.google.com/maps/search/?api=1&amp;query=Colibri+Italdiszkont,+Sz%C3%A9chenyi+utca+1,+Dunavars%C3%A1ny,+2336"
+            target="_blank"
+            rel="noreferrer"
+            >Megnyitás térképen</a
+          >
+        </div>
+      </section>
+
+      <section id="kapcsolat" class="contact reveal">
+        <div class="container">
+          <div class="section-head">
+            <h2>Kapcsolat</h2>
+            <p>Keress minket nyitvatartási időben, vagy írj e-mailt.</p>
+          </div>
+
+          <div class="contact-grid">
+            <article class="contact-card">
+              <h3>Nyitvatartás</h3>
+              <ul class="hours-list">
+                <li><span>Hétfő</span><strong>7:00-19:00</strong></li>
+                <li><span>Kedd</span><strong>7:00-19:00</strong></li>
+                <li><span>Szerda</span><strong>7:00-19:00</strong></li>
+                <li><span>Csütörtök</span><strong>7:00-19:00</strong></li>
+                <li><span>Péntek</span><strong>7:00-19:00</strong></li>
+                <li><span>Szombat</span><strong>7:00-19:00</strong></li>
+                <li><span>Vasárnap</span><strong>8:00-15:00</strong></li>
+              </ul>
+            </article>
+
+            <article class="contact-card">
+              <h3>Elérhetőség</h3>
+              <p><small>SZOLGÁLTATÁS</small>MOHU automata pont</p>
+              <p><small>BOLT NEVE</small>Colibri Italdiszkont</p>
+              <p>
+                <small>TELEFON</small>
+                <a href="tel:+36308736729">+36 (30) 873 6729</a>
+              </p>
+              <p>
+                <small>E-MAIL</small>
+                <a href="mailto:colibridiszkont@hotmail.com">colibridiszkont@hotmail.com</a>
+              </p>
+              <p>
+                <small>CÍM</small>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&amp;query=Colibri+Italdiszkont,+Sz%C3%A9chenyi+utca+1,+Dunavars%C3%A1ny,+2336"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Széchenyi utca 1., Dunavarsány, 2336</a
+                >
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-rating-wrap">
+        <p>
+          Google értékelés:
+          <a
+            href="https://www.google.com/maps/search/?api=1&amp;query=Colibri+Italdiszkont,+Sz%C3%A9chenyi+utca+1,+Dunavars%C3%A1ny,+2336"
+            target="_blank"
+            rel="noreferrer"
+            ><strong>4.9 / 5</strong></a
+          >
+        </p>
+      </div>
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Colibri Italdiszkont - Minden jog fenntartva</p>
+        <nav>
+          <a href="#top">Főoldal</a>
+          <a href="#kinalat">Kínálat</a>
+          <a href="#kapcsolat">Kapcsolat</a>
+          <a href="impresszum.html">Impresszum</a>
+          <a href="adatkezeles.html">Adatkezelés</a>
+        </nav>
+      </div>
+    </footer>
+
+    <div class="mobile-quickbar" aria-label="Gyors műveletek">
+      <a href="tel:+36308736729">
+        <span>Telefon</span>
+      </a>
+      <a
+        href="https://www.google.com/maps/search/?api=1&amp;query=Colibri+Italdiszkont,+Sz%C3%A9chenyi+utca+1,+Dunavars%C3%A1ny,+2336"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <span>Térkép</span>
+      </a>
+      <a href="mailto:colibridiszkont@hotmail.com">
+        <span>E-mail</span>
+      </a>
+    </div>
+
+    <div
+      id="productModal"
+      class="product-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="productModalTitle"
+      hidden
+    >
+      <article class="product-modal-card">
+        <button id="productModalClose" class="product-modal-close" type="button" aria-label="Bezárás">
+          x
+        </button>
+        <img
+          id="productModalImage"
+          class="product-modal-image"
+          src="logo.jpeg"
+          alt="Colibri Italdiszkont logó"
+        />
+        <h3 id="productModalTitle">Termék</h3>
+        <p id="productModalPrice" class="product-modal-price">Ár</p>
+      </article>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
