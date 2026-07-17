@@ -758,14 +758,22 @@ function setupProductModal() {
   });
 }
 
+const AGE_GATE_STORAGE_KEY = "colibri-age-confirmed";
+
 function setupAgeGate() {
   if (!ageGate || !ageConfirmBtn || !ageRejectBtn) {
+    return;
+  }
+
+  if (localStorage.getItem(AGE_GATE_STORAGE_KEY) === "true") {
+    ageGate.hidden = true;
     return;
   }
 
   document.body.classList.add("lock-scroll");
 
   ageConfirmBtn.addEventListener("click", () => {
+    localStorage.setItem(AGE_GATE_STORAGE_KEY, "true");
     ageGate.hidden = true;
     document.body.classList.remove("lock-scroll");
   });

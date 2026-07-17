@@ -41,16 +41,18 @@ Teljes funkcionalitású e-commerce weboldal a **Colibri Italdiszkont** számár
 ## 🚀 Telepítés
 
 1. **Klónozás**
+
    ```bash
-   git clone https://github.com/nmthmate/colibri-discount.git
-   cd colibri-discount
+   git clone https://github.com/nmthmate/colibri-web.git
+   cd colibri-web
    ```
 
 2. **Webszerver futtatása** (dev)
+
    ```bash
    # Python 3
    python -m http.server 8000
-   
+
    # Python 2
    python -m SimpleHTTPServer 8000
    ```
@@ -63,11 +65,13 @@ Teljes funkcionalitású e-commerce weboldal a **Colibri Italdiszkont** számár
 ## 📋 Funkciók Részletei
 
 ### Age Gate
+
 - Jogi kötelezettség az alkoholtartalmú termékek miatt
 - Felhasználó megerősítésre vagy elutasításra van szüksége
 - LocalStorage alapú session nyilvántartás
 
 ### Termékkatalógus
+
 - Dinamikus termékbetöltés a `kinalat.json`-ből
 - Kategóriák szerinti szűrés
 - Árszűrés (0-999 Ft, 1000-2999 Ft, stb.)
@@ -76,11 +80,13 @@ Teljes funkcionalitású e-commerce weboldal a **Colibri Italdiszkont** számár
 - Lazy loading "További termékek" gombbal
 
 ### Akciók
+
 - Kiemelt, akciós termékek rövid szakasza
 - Szín-kódolt badge-ek (sárga, zöld, mentol)
 - Vizuálisan megkülönböztetett design
 
 ### Admin Panel
+
 - Apache .htaccess védelemmel
 - Termékkészlet frissítési lehetőség
 - Akciók kezelése
@@ -111,6 +117,7 @@ MIT License
 ## 👤 Fejlesztő
 
 **Németh Máté** - Junior Frontend Developer
+
 - 🐙 GitHub: [@nmthmate](https://github.com/nmthmate)
 - 💼 LinkedIn: [Németh Máté](https://www.linkedin.com/in/n%C3%A9meth-m%C3%A1t%C3%A9-328356397)
 
